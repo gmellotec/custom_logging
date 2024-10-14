@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="logging",  # Nome do pacote
+    name="custom_logging",  # Nome do pacote
     version="0.1",  # Versão do pacote
     description="Pacote de logging customizado",
     long_description=open("README.md").read(),  # Descrição longa (se você tiver um README)
