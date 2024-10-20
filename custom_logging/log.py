@@ -44,7 +44,7 @@ class Log:
         log_message = f"{timestamp}    {flag} - {message}"
         print(log_message, flush=True)
         
-        default_log_message = f"{timestamp}    [INFO] - {message}"
+        default_log_message = f"{timestamp}    [INFO] - {message}."
         self._write_log(default_log_message)
 
     def warning(self, message):
@@ -53,14 +53,14 @@ class Log:
         log_message = f"{timestamp} {flag} - {message}"
         print(log_message, flush=True)
         
-        default_log_message = f"{timestamp} [WARNING] - {message}"
+        default_log_message = f"{timestamp} [WARNING] - {message}."
         self._write_log(default_log_message)
 
     def error(self, message):
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         error = traceback.format_exc()
         flag = Fore.RED + '[ERROR]' + Style.RESET_ALL
-        log_message = f"{timestamp}   {flag} - {message} - {error}"
+        log_message = f"{timestamp}   {flag} - {message} - {error}."
         print(log_message, flush=True)
         
         default_log_message = f"{timestamp}   [ERROR] - {message} - {error}"
@@ -69,7 +69,7 @@ class Log:
     def robot(self, message):
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         flag = Fore.BLUE + '[ROBOT]' + Style.RESET_ALL
-        log_message = f"{timestamp}   {flag} - {message}"
+        log_message = f"{timestamp}   {flag} - {message}."
         print(log_message, flush=True)
         
         default_log_message = f"{timestamp}   [ROBOT] - {message}"
