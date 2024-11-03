@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="custom_logging",  # Nome do pacote
-    version="0.3",  # Versão do pacote
+    version="0.4",  # Versão do pacote
     description="Pacote de logging customizado",
     long_description=open("README.md").read(),  # Descrição longa (se você tiver um README)
     long_description_content_type="text/markdown",

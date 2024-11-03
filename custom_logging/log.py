@@ -2,10 +2,7 @@ from datetime import datetime
 import os
 import threading
 import traceback
-from colorama import Fore, Style, init
-
-
-init(autoreset=True)
+from colorama import Fore, Style
 
 class Log:
     _instance = None
@@ -43,7 +40,7 @@ class Log:
 
     def info(self, message):
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        flag = Fore.GREEN + '[INFO]'
+        flag = Fore.GREEN + '[INFO]' + Style.RESET_ALL
         log_message = f"{timestamp}    {flag} - {message}"
         print(log_message, flush=True)
         
@@ -52,7 +49,7 @@ class Log:
 
     def warning(self, message):
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        flag = Fore.YELLOW + '[WARNING]'
+        flag = Fore.YELLOW + '[WARNING]' + Style.RESET_ALL
         log_message = f"{timestamp} {flag} - {message}"
         print(log_message, flush=True)
         
@@ -62,8 +59,8 @@ class Log:
     def error(self, message):
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         error = traceback.format_exc()
-        flag = Fore.RED + '[ERROR]'
-        log_message = f"{timestamp}   {flag} - {message} - {error}."
+        flag = Fore.RED + '[ERROR]' + Style.RESET_ALL
+        log_message = f"{timestamp}   {flag} - {message} - {error}"
         print(log_message, flush=True)
         
         default_log_message = f"{timestamp}   [ERROR] - {message} - {error}"
@@ -71,8 +68,8 @@ class Log:
 
     def robot(self, message):
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        flag = Fore.BLUE + '[ROBOT]'
-        log_message = f"{timestamp}   {flag} - {message}."
+        flag = Fore.BLUE + '[ROBOT]' + Style.RESET_ALL
+        log_message = f"{timestamp}   {flag} - {message}"
         print(log_message, flush=True)
         
         default_log_message = f"{timestamp}   [ROBOT] - {message}"
